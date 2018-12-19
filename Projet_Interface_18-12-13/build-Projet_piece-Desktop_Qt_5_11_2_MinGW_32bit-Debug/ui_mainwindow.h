@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -29,7 +30,6 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QLabel *label;
-    QLabel *lPhotoBase;
     QPushButton *pbAcquerir;
     QToolButton *tbSource;
     QLineEdit *leSource;
@@ -64,6 +64,9 @@ public:
     QLabel *l1Euro;
     QLabel *l2Euro;
     QCheckBox *cbDetail;
+    QGraphicsView *graphicsView;
+    QLineEdit *leIndexCamera;
+    QLabel *label_7;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -104,32 +107,26 @@ public:
         font.setItalic(false);
         font.setWeight(75);
         label->setFont(font);
-        lPhotoBase = new QLabel(centralWidget);
-        lPhotoBase->setObjectName(QStringLiteral("lPhotoBase"));
-        lPhotoBase->setGeometry(QRect(10, 110, 511, 381));
-        QFont font1;
-        font1.setPointSize(8);
-        lPhotoBase->setFont(font1);
         pbAcquerir = new QPushButton(centralWidget);
         pbAcquerir->setObjectName(QStringLiteral("pbAcquerir"));
-        pbAcquerir->setGeometry(QRect(90, 600, 121, 41));
-        QFont font2;
-        font2.setFamily(QStringLiteral("Calibri"));
-        font2.setPointSize(12);
-        pbAcquerir->setFont(font2);
+        pbAcquerir->setGeometry(QRect(340, 590, 91, 31));
+        QFont font1;
+        font1.setFamily(QStringLiteral("Calibri"));
+        font1.setPointSize(12);
+        pbAcquerir->setFont(font1);
         tbSource = new QToolButton(centralWidget);
         tbSource->setObjectName(QStringLiteral("tbSource"));
-        tbSource->setGeometry(QRect(300, 540, 61, 31));
+        tbSource->setGeometry(QRect(340, 530, 61, 31));
         leSource = new QLineEdit(centralWidget);
         leSource->setObjectName(QStringLiteral("leSource"));
-        leSource->setGeometry(QRect(90, 540, 201, 31));
+        leSource->setGeometry(QRect(130, 530, 201, 31));
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(10, 530, 81, 41));
-        QFont font3;
-        font3.setFamily(QStringLiteral("Calibri"));
-        font3.setPointSize(14);
-        label_2->setFont(font3);
+        label_2->setGeometry(QRect(20, 520, 81, 41));
+        QFont font2;
+        font2.setFamily(QStringLiteral("Calibri"));
+        font2.setPointSize(14);
+        label_2->setFont(font2);
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QStringLiteral("label_3"));
         label_3->setGeometry(QRect(680, 170, 31, 16));
@@ -145,7 +142,7 @@ public:
         label_8 = new QLabel(centralWidget);
         label_8->setObjectName(QStringLiteral("label_8"));
         label_8->setGeometry(QRect(770, 90, 211, 41));
-        label_8->setFont(font3);
+        label_8->setFont(font2);
         le1Centime = new QLineEdit(centralWidget);
         le1Centime->setObjectName(QStringLiteral("le1Centime"));
         le1Centime->setGeometry(QRect(710, 170, 61, 21));
@@ -153,7 +150,7 @@ public:
         pbCompter = new QPushButton(centralWidget);
         pbCompter->setObjectName(QStringLiteral("pbCompter"));
         pbCompter->setGeometry(QRect(940, 560, 131, 41));
-        pbCompter->setFont(font2);
+        pbCompter->setFont(font1);
         le2Centime = new QLineEdit(centralWidget);
         le2Centime->setObjectName(QStringLiteral("le2Centime"));
         le2Centime->setGeometry(QRect(710, 250, 61, 21));
@@ -197,7 +194,7 @@ public:
         label_14 = new QLabel(centralWidget);
         label_14->setObjectName(QStringLiteral("label_14"));
         label_14->setGeometry(QRect(730, 490, 91, 31));
-        label_14->setFont(font3);
+        label_14->setFont(font2);
         leSomme = new QLineEdit(centralWidget);
         leSomme->setObjectName(QStringLiteral("leSomme"));
         leSomme->setGeometry(QRect(820, 490, 141, 31));
@@ -205,7 +202,9 @@ public:
         lPhotoCFI = new QLabel(centralWidget);
         lPhotoCFI->setObjectName(QStringLiteral("lPhotoCFI"));
         lPhotoCFI->setGeometry(QRect(960, 0, 171, 81));
-        lPhotoCFI->setFont(font1);
+        QFont font3;
+        font3.setPointSize(8);
+        lPhotoCFI->setFont(font3);
         l1Centime = new QLabel(centralWidget);
         l1Centime->setObjectName(QStringLiteral("l1Centime"));
         l1Centime->setGeometry(QRect(620, 150, 81, 61));
@@ -234,10 +233,20 @@ public:
         cbDetail->setObjectName(QStringLiteral("cbDetail"));
         cbDetail->setGeometry(QRect(810, 600, 261, 51));
         cbDetail->setLayoutDirection(Qt::RightToLeft);
+        graphicsView = new QGraphicsView(centralWidget);
+        graphicsView->setObjectName(QStringLiteral("graphicsView"));
+        graphicsView->setGeometry(QRect(40, 150, 421, 351));
+        leIndexCamera = new QLineEdit(centralWidget);
+        leIndexCamera->setObjectName(QStringLiteral("leIndexCamera"));
+        leIndexCamera->setGeometry(QRect(130, 590, 51, 31));
+        label_7 = new QLabel(centralWidget);
+        label_7->setObjectName(QStringLiteral("label_7"));
+        label_7->setGeometry(QRect(10, 580, 121, 41));
+        label_7->setFont(font2);
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1125, 26));
+        menuBar->setGeometry(QRect(0, 0, 1125, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -255,7 +264,6 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
         label->setText(QApplication::translate("MainWindow", " Compteur de pi\303\250ce", nullptr));
-        lPhotoBase->setText(QApplication::translate("MainWindow", "                                           Photo Base", nullptr));
         pbAcquerir->setText(QApplication::translate("MainWindow", "Acquerir", nullptr));
         tbSource->setText(QApplication::translate("MainWindow", "...", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "Source :", nullptr));
@@ -280,6 +288,7 @@ public:
         l1Euro->setText(QApplication::translate("MainWindow", "1Euro", nullptr));
         l2Euro->setText(QApplication::translate("MainWindow", "2Euro", nullptr));
         cbDetail->setText(QApplication::translate("MainWindow", "Afficher le d\303\251tail du traitement d'image", nullptr));
+        label_7->setText(QApplication::translate("MainWindow", "Index cam\303\251ra : ", nullptr));
     } // retranslateUi
 
 };
